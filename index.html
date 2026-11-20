@@ -19,34 +19,34 @@
   <main>
     <section id="main__left">
       <h4>Twoje zamówienie</h4>
-      <ul>
+      <ul id="main__list">
       </ul>
-      <button onclick="skrypt2">Wyczyść</button>
-      <button onclick="skrypt3">Zatwierdź</button>
+      <button onclick="skrypt2()">Wyczyść</button>
+      <button onclick="skrypt3()">Zatwierdź</button>
     </section>
 
     <section id="main__right">
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/nalesniki.webp" alt="Naleśniki">
         <p>Naleśniki</p>
       </div>
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/lasagne.webp" alt="Lasagne szpinakowa">
         <p>Lasagne szpinakowa</p>
       </div>
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/marchewka.webp" alt="Pieczona marchewka">
         <p>Pieczona marchewka</p>
       </div>
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/rosol.webp" alt="Wege rosół">
         <p>Wege rosół</p>
       </div>
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/tarta.webp" alt="Tarta szparagow">
         <p>Tarta szparagowa</p>
       </div>
-      <div class="card" onclick="skrypt1">
+      <div class="card" onclick="skrypt1(this)">
         <img src="pliki19/kompot.webp" alt="Kompot">
         <p>Kompot</p>
       </div>
@@ -59,5 +59,24 @@
       Wykonał: 000000000000
     </p>
   </footer>
+  <script>
+    function skrypt1(element) {
+        let elementList = document.getElementById('main__list');
+        let li = document.createElement('li');
+        li.innerHTML = element.querySelector('p').innerHTML;
+        elementList.appendChild(li);
+    }
+
+    function skrypt2() {
+      let elementList = document.getElementById('main__list');
+      elementList.innerHTML = "";
+    }
+
+    function skrypt3() {
+      let elementList = document.getElementById('main__list');
+      alert('Zamówienie zostało przekazane do realizacji');
+      elementList.innerHTML = "";
+    }
+  </script>
 </body>
 </html>
