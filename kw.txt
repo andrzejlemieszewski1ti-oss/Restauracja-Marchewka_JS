@@ -1,0 +1,24 @@
+kw1:
+SELECT imie, nazwisko from kelnerzy
+ORDER BY nazwisko desc
+
+kw2:
+SELECT count(*) as liczba_zamówień from zamowienia
+join stoliki
+on zamowienia.idStolika = stoliki.id
+where numerStolika = 3 and sala = 1
+
+kw3:
+SELECT nazwa from potrawy
+join zamowieniapotrawy
+on potrawy.id = zamowieniapotrawy.idPotrawy
+join zamowienia
+on zamowieniapotrawy.idZamowienia = zamowienia.id
+WHERE DATE(dataZlozenia) = '2024-06-09';
+
+kw4:
+CREATE user 'administrator'@localhost identified by 'boss123!'
+
+kw5:
+ALTER TABLE potrawy
+MODIFY COLUMN cena decimal(6,2)
